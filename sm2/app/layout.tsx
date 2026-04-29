@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { DemoBanner } from "@/components/demo-banner";
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -9,8 +10,17 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "SpeedyMat Laundry - Keeping It Clean, Scaling It Smart",
+  description:
+    "SpeedyMat transforms the essential laundry chore into a productive, best-in-class experience. Schedule drop-offs, track your laundry in real-time, and enjoy commercial-grade cleaning in Phoenix, AZ.",
+  keywords: [
+    "laundry service",
+    "Phoenix AZ",
+    "commercial laundry",
+    "pet bed cleaning",
+    "wash and fold",
+    "SpeedyMat",
+  ],
 };
 
 const geistSans = Geist({
@@ -29,10 +39,11 @@ export default function RootLayout({
       <body className={`${geistSans.className} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
+          <DemoBanner />
           {children}
         </ThemeProvider>
       </body>
