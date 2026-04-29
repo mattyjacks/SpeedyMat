@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Shirt,
   BedDouble,
@@ -19,6 +20,7 @@ import {
   ThumbsUp,
   Timer,
   BadgeCheck,
+  MessageCircle,
 } from "lucide-react";
 
 const services = [
@@ -365,6 +367,57 @@ export default function Home() {
                 <p className="mt-4 text-sm font-semibold">{t.name}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 border-y">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+                Meet <span className="text-primary">Speedy</span>! 🐦
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Your witty laundry companion is here to help! Speedy is obsessed with keeping things CLEAN and loves making absurd jokes about laundry. Chat with Speedy for laughs, laundry tips, or just to brighten your day!
+              </p>
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-primary">
+                    <MessageCircle className="h-4 w-4" />
+                  </div>
+                  <span className="text-sm font-medium">Powered by GPT-4o Mini AI</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-primary">
+                    <Star className="h-4 w-4" />
+                  </div>
+                  <span className="text-sm font-medium">Absurdly funny & helpful</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-primary">
+                    <Zap className="h-4 w-4" />
+                  </div>
+                  <span className="text-sm font-medium">Always keeps it CLEAN!</span>
+                </div>
+              </div>
+              <Link
+                href="/chat"
+                className="group inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl hover:-translate-y-0.5"
+              >
+                <MessageCircle className="h-5 w-5" />
+                Chat with Speedy Now
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+            <div className="relative h-96 lg:h-full min-h-96">
+              <Image
+                src="/Speedy Witty Thumbs-up-White-small.png"
+                alt="Speedy the Bird Mascot"
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>

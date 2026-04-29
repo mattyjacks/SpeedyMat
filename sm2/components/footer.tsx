@@ -45,26 +45,34 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/dashboard"
+                  href="/customers"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Dashboard
+                  For Customers
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/dashboard/schedule"
+                  href="/investors"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Schedule Drop-off
+                  For Investors
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/admin"
+                  href="/charity"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Admin Portal
+                  Speedy 4 Charity
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/chat"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  SpeedyChat
                 </Link>
               </li>
             </ul>

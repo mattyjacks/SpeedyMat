@@ -11,7 +11,9 @@ import {
   LayoutDashboard,
   ShieldCheck,
   ExternalLink,
+  MessageCircle,
 } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -21,10 +23,12 @@ export function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Home" },
+    { href: "/chat", label: "SpeedyChat", icon: MessageCircle },
+    { href: "/customers", label: "For Customers" },
+    { href: "/investors", label: "For Investors" },
+    { href: "/charity", label: "Speedy 4 Charity" },
     { href: "/dashboard", label: "Dashboard" },
     { href: "/admin", label: "Admin" },
-    { href: "/privacy", label: "Privacy" },
-    { href: "/terms", label: "Terms" },
   ];
 
   return (
@@ -38,29 +42,38 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-transform group-hover:scale-110">
-            <WashingMachine className="h-5 w-5" />
+          <div className="relative h-9 w-9 transition-transform group-hover:scale-110">
+            <Image
+              src="/speedymat logo speedy.png"
+              alt="SpeedyMat Logo"
+              fill
+              className="object-contain"
+            />
           </div>
-          <span className="text-xl font-bold tracking-tight">
+          <span className="text-xl font-bold tracking-tight hidden sm:inline">
             Speedy<span className="text-primary">Mat</span>
           </span>
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                pathname === link.href
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const Icon = (link as any).icon;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "rounded-lg px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1.5",
+                  pathname === link.href
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}
+              >
+                {Icon && <Icon className="h-4 w-4" />}
+                {link.label}
+              </Link>
+            );
+          })}
           <div className="ml-2 border-l pl-2">
             <ThemeSwitcher />
           </div>
@@ -92,21 +105,25 @@ export function Navbar() {
 
       {mobileOpen && (
         <div className="border-t bg-background px-4 pb-4 pt-2 md:hidden animate-fade-in">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className={cn(
-                "block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
-                pathname === link.href
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-muted"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const Icon = (link as any).icon;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className={cn(
+                  "flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                  pathname === link.href
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:bg-muted"
+                )}
+              >
+                {Icon && <Icon className="h-4 w-4" />}
+                {link.label}
+              </Link>
+            );
+          })}
           <div className="mt-3 flex items-center gap-2">
             <Link
               href="/dashboard"
