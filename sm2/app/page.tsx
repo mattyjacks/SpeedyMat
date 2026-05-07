@@ -161,6 +161,12 @@ export default function Home() {
                 Visit Official Site
                 <ExternalLink className="h-4 w-4" />
               </a>
+              <Link
+                href="/design2"
+                className="inline-flex items-center gap-2 rounded-xl border-2 border-amber-300/50 bg-amber-400/10 backdrop-blur-sm px-6 py-4 text-base font-semibold text-amber-200 transition-all hover:bg-amber-400/20"
+              >
+                See Design #2
+              </Link>
             </div>
             <p className="mt-4 text-xs text-white/50">
               No credit card required to schedule. Pay only when you pick up.
@@ -418,6 +424,116 @@ export default function Home() {
                 className="object-contain"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              Pick Up & Deliver <span className="text-primary">Coming 2025</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Too busy to drop off? We'll come to you. Our third-party logistics partners pick up laundry from your home or business, bring it to SpeedyMat for expert care, and deliver it back clean and ready to wear.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3 mb-12">
+            {[
+              {
+                step: 1,
+                icon: "📱",
+                title: "Schedule Online",
+                desc: "Book a pickup time that works for you. We'll send a driver to your home or business.",
+              },
+              {
+                step: 2,
+                icon: "🚗",
+                title: "We Pick Up",
+                desc: "Our logistics partners collect your laundry and bring it to SpeedyMat for professional cleaning.",
+              },
+              {
+                step: 3,
+                icon: "🐦",
+                title: "Expert Care",
+                desc: "Your laundry gets our signature treatment with commercial-grade machines and expert handling.",
+              },
+              {
+                step: 4,
+                icon: "📦",
+                title: "We Deliver",
+                desc: "Fresh, clean, and perfectly folded laundry delivered back to your door on your schedule.",
+              },
+              {
+                step: 5,
+                icon: "⭐",
+                title: "Loyalty Rewards",
+                desc: "Earn points on every pickup & delivery order. Redeem for discounts and free services.",
+              },
+              {
+                step: 6,
+                icon: "💰",
+                title: "Transparent Pricing",
+                desc: "No hidden fees. Pricing includes pickup, cleaning, and delivery. Pay online or at delivery.",
+              },
+            ].map((item) => (
+              <div key={item.step} className="rounded-xl border bg-card p-6 hover:shadow-lg transition-all">
+                <div className="text-4xl mb-3">{item.icon}</div>
+                <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid gap-12 lg:grid-cols-2 items-center bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 rounded-xl border p-8 md:p-12">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Service Areas (2025)</h3>
+              <div className="space-y-3">
+                {[
+                  "Downtown Phoenix - 7am-7pm Daily",
+                  "Scottsdale - 8am-6pm Daily",
+                  "Tempe - 7am-8pm Daily",
+                  "More neighborhoods coming soon!",
+                ].map((area, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <Truck className="h-5 w-5 text-primary shrink-0" />
+                    <span className="font-medium">{area}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground mt-6">
+                Not in a service area yet? Schedule a drop-off at our Phoenix location and we'll have your laundry ready in 24 hours.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Why Pick Up & Deliver?</h3>
+              <ul className="space-y-3">
+                {[
+                  "Save 2+ hours per week on laundry",
+                  "Professional care for delicate items",
+                  "Convenient for busy professionals",
+                  "Perfect for businesses & offices",
+                  "Loyalty points on every order",
+                  "Same-day rush available",
+                ].map((reason, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span>{reason}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-muted-foreground mb-4">
+              Want to be notified when Pick Up & Deliver launches in your area?
+            </p>
+            <button className="inline-flex items-center gap-2 rounded-xl border-2 border-primary bg-primary/10 px-6 py-3 font-semibold text-primary hover:bg-primary/20 transition-all">
+              Join the Waitlist
+              <ArrowRight className="h-4 w-4" />
+            </button>
           </div>
         </div>
       </section>
