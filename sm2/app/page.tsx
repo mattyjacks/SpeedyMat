@@ -115,7 +115,8 @@ export default function Home() {
       <section className="relative gradient-hero dark:gradient-hero-dark overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEuNSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCBmaWxsPSJ1cmwoI2EpIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIi8+PC9zdmc+')] opacity-50" />
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
-          <div className="max-w-3xl">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-1.5 text-sm text-white/90 mb-6">
               <Zap className="h-4 w-4" />
               Now serving Greater Phoenix, Arizona
@@ -171,6 +172,16 @@ export default function Home() {
             <p className="mt-4 text-xs text-white/50">
               No credit card required to schedule. Pay only when you pick up.
             </p>
+            </div>
+            <div className="relative hidden lg:block h-96 lg:h-full min-h-96">
+              <Image
+                src="/speedy mat clean laundry by mattyjacks.png"
+                alt="Speedy - SpeedyMat Mascot"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
